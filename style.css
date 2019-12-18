@@ -1,0 +1,35 @@
+body{
+    background-color: #f5f5f5;
+    /* height: 100vh; */
+    min-height: 100vh;
+    overflow: hidden;
+}
+.nav-name{
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.container{
+    padding-top: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.mr25{
+    margin-right: 25%;
+}
+@media all and (max-width: 768px){
+    .mr25{
+        margin-right: 0;
+    }
+}
+.label-err{
+    height: 1ch;
+    color: #f14668;
+}
+
+.btn-exchange{
+    margin-top: 30px;
+}
+.content .title{
+    margin-bottom: 70px;
+}

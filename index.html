@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Option Contract</title>
+</head>
+
+<body>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <p class="navbar-item">
+                <img src="./img/logo.png" alt="Obyte">
+                <span class="nav-name">Obyte - Option Contract</span>
+            </p>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content is-large">
+            <h1 class="title">Option Contract</h1>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <div class="content is-medium">
+                    <h2 class="subtitle is-medium">Investment</h2>
+                    <div class="columns">
+                        <div class="column">
+                            <input class="input" id="amount" type="number" min="100000"
+                                placeholder="Amount byte (>100k)" autocomplete="off">
+                            <label class="label is-small label-err" id="amount-status"></label>
+                        </div>
+                        <div class="column">
+                            <button id="open" class="button is-info">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="box mr25">
+                            You should sell one of the assets on the exchange and leave the other
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="column">
+                <div class="content is-medium">
+                    <h2 class="subtitle">Redemption</h2>
+                    <div class="columns">
+                        <div class="column">
+                            <input class="input" id="address" type="text" placeholder="Your address" autocomplete="off"
+                                value="AFVAFTQHJ47TDGEEP4J7ATQ7DD3B2ABX">
+                            <label class="label is-small label-err" id="address-status"></label>
+                        </div>
+                        <div class="column">
+                            <button id="search" class="button is-info">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="info" id="info"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/obyte"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
+<!-- //byteball-tn:XLOHAPPAZHUXAMP7B5SHVHI4B3NNQOLJ?amount=12300&amp;asset=base -->

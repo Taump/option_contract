@@ -1,6 +1,6 @@
 window.onload = function () {
 
-    const AA_address = '3V64CVUTCNTPE7M3EY7E5LDKWH6SR6RW';
+    const AA_address = 'TIURDTV4QDL4XZWL4BK23FSWCCJDV4S5';
     const testnet = true;
 
 
@@ -10,11 +10,12 @@ window.onload = function () {
         address: AA_address
     };
 
-    const open = document.getElementById('open');
-    const search = document.getElementById('search');
-    open.addEventListener('click', event => {
+    const InvestmentBtn = document.getElementById('InvestmentBtn');
+    const searchAssetsBtn = document.getElementById('searchAssetsBtn');
+    InvestmentBtn.addEventListener('click', event => {
         const amountInput = document.getElementById('amount');
         const amountStatus = document.getElementById('amount-status');
+        amountStatus.innerText = '';
         const amount = amountInput.value;
         amountInput.classList.remove('is-danger');
         if (amount && amount >= 100000) {
@@ -39,14 +40,16 @@ window.onload = function () {
     });
 
 
-    search.addEventListener('click', event => {
+    searchAssetsBtn.addEventListener('click', event => {
         const addressInput = document.getElementById('address')
+        const info = document.getElementById('info');
         const address = addressInput.value;
+        const addressStatus = document.getElementById('address-status');
         addressInput.classList.remove('is-danger')
-
+        addressStatus.innerText = '';
         if (obyte.utils.isValidAddress(address)) {
             client.api.getAaStateVars(params, function (err, result) {
-                const info = document.getElementById('info');
+
                 if (result.no_asset && result.yes_asset) {
                     if (result.winner) {
                         const { no_asset, yes_asset, winner } = result;
@@ -79,14 +82,12 @@ window.onload = function () {
                         info.classList.add('box');
                         info.innerHTML = "The winner has not yet been chosen";
                     }
-
                 } else {
                     info.classList.add('box');
                     info.innerHTML = "No assets created";
                 }
             });
         } else {
-            const addressStatus = document.getElementById('address-status');
             addressInput.classList.add('is-danger');
             addressStatus.innerHTML = "Adress is not valid";
         }

@@ -1,6 +1,6 @@
 window.onload = function () {
 
-    const AA_address = 'TIURDTV4QDL4XZWL4BK23FSWCCJDV4S5';
+    const AA_address = 'ITVTJPWCKMHW33XM5ZRARVUDJ4WF6ITN';
     const testnet = true;
 
 
@@ -50,7 +50,7 @@ window.onload = function () {
         if (obyte.utils.isValidAddress(address)) {
             client.api.getAaStateVars(params, function (err, result) {
 
-                if (result.no_asset && result.yes_asset) {
+                if (result && result.no_asset && result.yes_asset) {
                     if (result.winner) {
                         const { no_asset, yes_asset, winner } = result;
                         client.api.getBalances([address], function (err, balance) {
